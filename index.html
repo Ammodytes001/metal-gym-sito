@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Metal Gym - Palestra storica dal 1988 a Lentate sul Seveso. Bodybuilding old school, Fitness e passione.">
     <title>Metal Gym | Est. 1988</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,34 +17,123 @@
 
     <header class="main-header">
         <div class="container header-flex">
-            <div class="logo-container">
-                <img src="img/logo.jpg" alt="Metal Gym Logo" class="logo">
+            <a href="#" class="logo-link">
+                <img src="img/logo.jpg" alt="Metal Gym" class="logo">
+            </a>
+
+            <div class="hamburger" id="hamburger-btn">
+                <i class="fa-solid fa-bars"></i>
             </div>
-            <nav class="main-nav">
+
+            <nav class="main-nav" id="nav-menu">
                 <ul>
                     <li><a href="#storia">Storia</a></li>
-                    <li><a href="#palestra">La Palestra</a></li>
-                    <li><a href="#contatti" class="btn-cta">Contatti</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#recensioni">Dicono di Noi</a></li>
+                    <li><a href="#contatti" class="btn-cta">CONTATTI</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>SIAMO SU UN ALTRO <span class="text-yellow">PIANETA</span></h1>
-            <p>Dal 1988 la vera essenza del Bodybuilding a Lentate sul Seveso.</p>
+            <p>GHISA, SUDORE E POCHE PAROLE. DAL 1988.</p>
             <a href="#contatti" class="btn-primary">INIZIA AD ALLENARTI</a>
         </div>
     </section>
 
     <section id="storia" class="section-dark">
         <div class="container">
-            <h2 class="section-title">DAL <span class="text-yellow">1988</span></h2>
+            <h2 class="section-title">OLD SCHOOL <span class="text-yellow">GENUINE</span></h2>
             <div class="content-box">
-                <p>La Metal Gym non è una semplice palestra, è una famiglia nata dalla passione. Fondata nel 1988, portiamo avanti la tradizione del vero allenamento.</p>
-                <p>Gestita con orgoglio da Vanni, Daniele e Cinzia.</p>
+                <p>La Metal Gym è una palestra storica dove non solo ci si allena, ma si ottengono risultati. Nata nel 1988, portiamo avanti la tradizione del vero bodybuilding.</p>
+                <p>Niente distrazioni, solo macchinari ben fatti e dischi di ghisa per chi cerca la sostanza.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servizi" class="section-services">
+        <div class="container">
+            <h2 class="section-title">COSA OFFRIAMO</h2>
+            <div class="grid-3">
+                <div class="service-card">
+                    <i class="fa-solid fa-dumbbell icon-large"></i>
+                    <h3>Sala Pesi</h3>
+                    <p>Attrezzatura "Old School", manubri pesanti e macchinari a leveraggio per il massimo isolamento.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-users icon-large"></i>
+                    <h3>Ambiente Familiare</h3>
+                    <p>Qui non sei un numero. Ti alleni in scioltezza, senza code e in un clima sereno.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-person-running icon-large"></i>
+                    <h3>Personal Trainer</h3>
+                    <p>Vanni e Daniele sono sempre presenti in sala. Esperienza decennale a tua disposizione.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-heart-pulse icon-large"></i>
+                    <h3>Corsi & Posturale</h3>
+                    <p>Percorsi personalizzati per ritrovare il benessere fisico e correggere la postura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section-dark">
+        <div class="container">
+            <h2 class="section-title">LO STAFF</h2>
+            
+            <div class="team-photo-container">
+                <img src="img/vanni_daniele_cinzia.jpg" alt="Vanni, Daniele e Cinzia - Metal Gym Staff" class="group-photo">
+            </div>
+
+            <div class="grid-3 team-descriptions">
+                
+                <div class="team-info-card">
+                    <h3>VANNI</h3>
+                    <span class="role">Fondatore & PT</span>
+                    <p>Il numero 1. Esperienza e passione dal 1988.</p>
+                </div>
+
+                <div class="team-info-card">
+                    <h3>DANIELE</h3>
+                    <span class="role">Personal Trainer</span>
+                    <p>Sempre disponibile in sala per massimizzare i tuoi gains.</p>
+                </div>
+                
+                <div class="team-info-card">
+                    <h3>CINZIA</h3>
+                    <span class="role">Responsabile Corsi</span>
+                    <p>L'anima organizzativa e tecnica dei corsi.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="recensioni" class="section-reviews">
+        <div class="container">
+            <h2 class="section-title">DICONO DI NOI</h2>
+            <div class="grid-3">
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐⭐</div>
+                    <p>"Classica palestra OLD SCHOOL. Ghisa, sudore, poche parole e TANTI GAINS. I trainer grondano di esperienza!"</p>
+                    <h4>- Bia R.</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Palestra storica dove si ottengono i risultati! Allegria e competenza sono i punti chiave."</p>
+                    <h4>- Manuel Volontè</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Unica palestra efficace frequentata nella mia vita. Se volete risultati evidenti frequentatela… Vanni n 1"</p>
+                    <h4>- Luca Pozzi</h4>
+                </div>
             </div>
         </div>
     </section>
@@ -51,35 +141,22 @@
     <section id="contatti" class="section-blue">
         <div class="container">
             <h2 class="section-title">VIENI A TROVARCI</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>Dove Siamo</h3>
-                    <p>Via Venezia 3<br>20823 Lentate sul Seveso (MB)</p>
-                </div>
-                <div class="contact-item">
-                    <h3>Chiama Ora</h3>
-                    <p><strong>Vanni:</strong> <a href="tel:+393398503481">339 850 3481</a></p>
-                    <p><strong>Daniele:</strong> <a href="tel:+393348006250">334 800 6250</a></p>
-                    <p><strong>Cinzia:</strong> <a href="tel:+393338628786">333 862 8786</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>Scrivici</h3>
-                    <p><a href="mailto:metalgym@libero.it">metalgym@libero.it</a></p>
-                </div>
+            <p class="address">Via Venezia 3, 20823 Lentate sul Seveso (MB)</p>
+            
+            <div class="contact-buttons">
+                <a href="tel:+393398503481" class="btn-outline">VANNI: 339 850 3481</a>
+                <a href="tel:+393348006250" class="btn-outline">DANIELE: 334 800 6250</a>
+                <a href="mailto:metalgym@libero.it" class="btn-outline">EMAIL</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Metal Gym - Associazione Sportiva.</p>
-            <p class="small-text">Via Venezia 3, Lentate sul Seveso (MB)</p>
-        </div>
+        <p>&copy; 2024 Metal Gym - Associazione Sportiva.</p>
     </footer>
-
+    
     <div id="cookie-banner" class="cookie-banner">
-        <p>Utilizziamo i cookie per migliorare la tua esperienza. Continuando a navigare accetti il loro utilizzo.</p>
-        <button id="accept-cookies" class="btn-small">Accetto</button>
+        <p>Utilizziamo i cookie per migliorare la tua esperienza. <button id="accept-cookies" class="btn-small">Accetto</button></p>
     </div>
 
     <script src="js/script.js"></script>
