@@ -13,12 +13,13 @@ html { scroll-behavior: smooth; }
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #111;
+    /* TEXTURE SFONDO GENERALE */
     background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../img/bg-texture.jpg');
     background-size: cover;
     background-attachment: fixed;
     color: var(--text-light);
     line-height: 1.6;
-    font-size: 18px; /* Base del font aumentata per tutto il sito */
+    font-size: 18px; /* Base del font aumentata */
 }
 
 h1, h2, h3, h4, .btn-cta, .btn-primary {
@@ -30,7 +31,7 @@ h1, h2, h3, h4, .btn-cta, .btn-primary {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* FIX SCROLL */
+/* FIX SCROLL SEZIONI */
 section {
     padding: 60px 0;
     border-bottom: 1px solid #333;
@@ -38,7 +39,7 @@ section {
 }
 
 .section-title {
-    font-size: 2.8rem; /* Titoli sezioni più grandi */
+    font-size: 2.8rem;
     text-align: center; margin-bottom: 40px;
     border-bottom: 4px solid var(--primary-blue); display: inline-block;
 }
@@ -71,142 +72,37 @@ section {
 .btn-cta { color: var(--primary-yellow); border: 3px solid var(--primary-yellow); padding: 10px 22px; font-size: 1.2rem; font-weight: bold;}
 .btn-cta:hover { background: var(--primary-yellow); color: #000; }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (NUOVA VERSIONE "CINEMA") --- */
 .hero {
     height: 85vh;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    background: linear-gradient(to bottom, rgba(0,21,61,0.7), rgba(0,0,0,0.9)), url('../img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center top;
-    border-bottom: 4px solid var(--primary-yellow);
-}
-.hero h1 { font-size: 4rem; text-shadow: 5px 5px 0px #000; margin-bottom: 1rem; line-height: 1.1;}
-.hero p { font-size: 1.8rem; font-weight: 900; } /* Molto spesso */
-.btn-primary {
-    display: inline-block; background-color: var(--primary-yellow); color: #000;
-    padding: 25px 45px; font-size: 1.5rem; margin-top: 30px; border: none;
-    clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
-    font-weight: 900;
-}
-.btn-primary:hover { transform: scale(1.05); background-color: #fff; }
-
-/* --- STORIA (Scritte ingrandite) --- */
-.content-box p {
-    font-size: 1.5rem; /* Molto più grande */
-    font-weight: 700; /* Grassetto */
-    margin-bottom: 20px;
-}
-
-/* --- NEWS SECTION --- */
-.section-news { background-color: #1a1a1a; border-left: 10px solid var(--primary-yellow); }
-.news-box {
-    background-color: #222; border: 3px dashed var(--primary-yellow); padding: 30px;
-    max-width: 900px; margin: 0 auto; text-align: left;
-}
-.news-title { color: var(--primary-yellow); font-size: 2.2rem; margin-bottom: 25px; border-bottom: 2px solid #444; padding-bottom: 10px;}
-.news-list li { 
-    font-size: 1.4rem; /* Lista più grande */
-    font-weight: 500; 
-    margin-bottom: 20px; 
-    padding-left: 20px; 
-    border-left: 5px solid var(--primary-blue); 
-}
-.news-date { text-align: right; font-size: 1.1rem; color: #ccc; margin-top: 20px; font-weight: bold;}
-
-/* --- SERVIZI (Scritte ingrandite) --- */
-.grid-simmetrica {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-@media (min-width: 900px) {
-    .grid-simmetrica { grid-template-columns: repeat(2, 1fr); }
-}
-
-.service-card { background: #222; border: 3px solid #333; padding: 40px; text-align: center; transition: 0.3s; }
-.service-card:hover { border-color: var(--primary-yellow); background: #2a2a2a; }
-.service-card h3 { 
-    font-size: 2rem; /* Titolo servizi enorme */
-    margin-bottom: 15px; 
-}
-.service-card p {
-    font-size: 1.3rem; /* Descrizione servizi grande */
-    font-weight: 700; /* Spessa */
-    color: #ddd;
-}
-.icon-large { font-size: 3.5rem; color: var(--primary-yellow); margin-bottom: 20px; }
-
-/* --- ORARI E PREZZI (Giganti) --- */
-.info-box {
-    background: #00153d; 
-    border: 4px solid var(--primary-yellow);
-    padding: 40px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     text-align: center;
-    min-height: 550px;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-}
-
-.info-box h3 { font-size: 2.5rem; margin-bottom: 30px; text-decoration: underline; text-decoration-color: white;}
-
-.info-list li { 
-    margin-bottom: 20px; 
-    border-bottom: 2px solid rgba(255,255,255,0.2); 
-    padding-bottom: 10px;
-    font-size: 1.8rem; /* Orari enormi */
-    font-weight: 900; /* Molto spessi */
-}
-
-.info-box p { 
-    font-size: 1.5rem; /* Testo abbonamenti grande */
-    font-weight: 700;
-    margin-bottom: 25px; 
-    line-height: 1.4;
-}
-
-/* --- GALLERY & TEAM --- */
-.grid-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.gallery-img { width: 100%; height: 280px; object-fit: cover; border: 3px solid #444; filter: grayscale(50%); transition: 0.3s; }
-.gallery-img:hover { filter: grayscale(0%); border-color: var(--primary-yellow); }
-
-.team-photo-container { text-align: center; margin-bottom: 40px; }
-.group-photo { width: 100%; max-width: 900px; height: auto; border: 5px solid var(--primary-yellow); box-shadow: 0 0 25px rgba(0,0,0,0.9); }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.team-info-card { background: #00153d; border: 2px solid #222; padding: 30px; text-align: center; }
-.team-info-card h3 { font-size: 1.8rem; }
-.team-info-card p { font-size: 1.2rem; font-weight: bold; }
-.role { color: var(--primary-yellow); font-weight: 900; font-family: 'Russo One'; display: block; font-size: 1.4rem; margin-bottom: 10px;}
-
-/* --- CONTATTI --- */
-.section-blue { background-color: var(--primary-blue); text-align: center; }
-.contact-layout { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
-@media (min-width: 768px) { .contact-layout { grid-template-columns: 1fr 1fr; text-align: left; } }
-.address { font-size: 2rem; margin-bottom: 30px; font-weight: 900; line-height: 1.4; }
-.contact-buttons-vertical { display: flex; flex-direction: column; gap: 25px; }
-.btn-outline { border: 4px solid var(--primary-yellow); color: white; padding: 20px; font-family: 'Russo One'; text-align: center; display: block; font-size: 1.5rem; font-weight: bold; }
-.btn-outline:hover { background: var(--primary-yellow); color: black; }
-.map-container { border: 5px solid var(--primary-yellow); height: 100%; min-height: 450px; }
-
-/* FOOTER */
-footer { background: black; text-align: center; padding: 30px; font-size: 1rem; color: #777; font-weight: bold;}
-
-/* --- MOBILE --- */
-@media (max-width: 900px) {
-    .hamburger { display: block; margin-right: 15px;} 
-    .logo { height: 80px; }
+    border-bottom: 4px solid var(--primary-yellow);
+    background-color: #111; /* Colore di fondo base */
     
-    .main-nav {
-        position: fixed; top: 0; right: -100%; width: 85%; height: 100vh;
-        background-color: #00153d; border-left: 5px solid var(--primary-yellow);
-        transition: 0.4s; display: flex; align-items: center; justify-content: center;
-        flex-direction: column; z-index: 1001;
-    }
-    .main-nav.active { right: 0; }
-    .main-nav ul { flex-direction: column; gap: 40px; text-align: center; }
-    .main-nav a { font-size: 1.8rem; } /* Menu mobile gigante */
-    
-    .hero h1 { font-size: 2.8rem; }
-    .hero p { font-size: 1.4rem; }
-    .grid-simmetrica { grid-template-columns: 1fr; }
-    
-    .info-list li { font-size: 1.5rem; } /* Orari leggermente ridotti su mobile per stare nello schermo */
+    /* STRATEGIA SFUMATURE:
+       Creiamo delle "maschere" nere ai lati per nascondere i bordi della foto verticale.
+    */
+    background-image: 
+        /* Sfumatura SX (Nero -> Trasparente) */
+        linear-gradient(to right, #111 10%, rgba(17,17,17,0) 40%),
+        /* Sfumatura DX (Nero -> Trasparente) */
+        linear-gradient(to left, #111 10%, rgba(17,17,17,0) 40%),
+        /* Sfumatura Basso (Nero -> Trasparente) per leggere meglio il testo */
+        linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%),
+        /* L'immagine vera e propria */
+        url('../img/hero-bg.jpg');
+
+    /* DIMENSIONI:
+       I gradienti coprono tutto (100% 100%).
+       L'immagine è "auto 100%" -> Altezza massima, larghezza automatica (proporzionata).
+    */
+    background-size: 100% 100%, 100% 100%, 100% 100%, auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
+
+.hero h1 { font-size: 4rem; text-shadow: 5px 5px 0px #000; margin-bottom: 1rem; line-height: 1.1;}
+.hero p { font-size: 1.8rem; font-weight: 900; text
