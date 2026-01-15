@@ -1,20 +1,48 @@
-// Aspetta che la pagina sia caricata
 document.addEventListener('DOMContentLoaded', function() {
     
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
+    // --- GESTIONE MENU MOBILE ---
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
 
-    // Controlla se l'utente ha già accettato in passato (funzionalità base)
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
-        cookieBanner.style.display = 'none';
+    // Funzione per aprire/chiudere
+    function toggleMenu() {
+        navMenu.classList.toggle('active');
+        
+        // Cambia icona da Hamburger a X
+        const icon = hamburgerBtn.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
     }
 
-    // Quando clicchi su "Accetto"
-    acceptBtn.addEventListener('click', function() {
-        // 1. Nascondi il banner
-        cookieBanner.style.display = 'none';
-        // 2. Salva la preferenza nel browser
-        localStorage.setItem('cookiesAccepted', 'true');
+    // Al click sull'hamburger
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evita che il click si propaghi
+            toggleMenu();
+        });
+    }
+
+    // Chiudi il menu se clicchi su un link
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Chiudi il menu se clicchi fuori
+    document.addEventListener('click', function(event) {
+        const isClickInside = navMenu.contains(event.target) || hamburgerBtn.contains(event.target);
+        if (!isClickInside && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
     });
 
 });
