@@ -1,5 +1,6 @@
 /* --- RESET & BASI --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; } /* Scorrimento dolce */
 
 :root {
     --primary-yellow: #FFD700;
@@ -10,228 +11,152 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* Texture effetto "Grip Metallo Scuro" */
-    background-color: #1a1a1a;
-    background-image: repeating-linear-gradient(45deg, #1f1f1f 0px, #1f1f1f 2px, #151515 2px, #151515 4px);
+    background-color: #111;
+    /* TEXTURE GRUNGE: Carica l'immagine bg-texture.jpg in img/ */
+    background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../img/bg-texture.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* L'immagine sta ferma mentre scorri */
     color: var(--text-light);
     line-height: 1.6;
 }
 
 h1, h2, h3, h4, .btn-cta, .btn-primary {
-    font-family: 'Russo One', sans-serif; /* Font Anni 80 */
+    font-family: 'Russo One', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .text-yellow { color: var(--primary-yellow); }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* --- HEADER & NAVIGAZIONE --- */
+/* --- HEADER --- */
 .main-header {
-    background-color: #00153d; /* Blu molto scuro */
+    background-color: #00153d;
     border-bottom: 4px solid var(--primary-yellow);
-    position: sticky; /* Il menu ti segue mentre scorri */
-    top: 0;
-    z-index: 1000;
+    position: sticky; top: 0; z-index: 1000;
     padding: 10px 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* FIX LOGO */
+/* LOGO PIÙ GRANDE */
 .logo {
-    height: 60px; /* Altezza fissa */
+    height: 90px; /* Aumentato da 60px a 90px */
     width: auto;
     display: block;
+    transition: transform 0.3s;
 }
+.logo:hover { transform: scale(1.05); }
 
-/* Menu Desktop */
-.main-nav ul {
-    display: flex;
-    gap: 25px;
-}
-
-.main-nav a {
-    font-family: 'Russo One', sans-serif;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
+/* MENU */
+.main-nav ul { display: flex; gap: 25px; }
+.main-nav a { font-family: 'Russo One', sans-serif; font-size: 1.1rem; transition: color 0.3s; }
 .main-nav a:hover { color: var(--primary-yellow); }
+.hamburger { display: none; font-size: 2rem; color: var(--primary-yellow); cursor: pointer; }
 .btn-cta { color: var(--primary-yellow); border: 2px solid var(--primary-yellow); padding: 5px 15px; }
 .btn-cta:hover { background: var(--primary-yellow); color: #000; }
 
-/* Menu Hamburger (nascosto su PC) */
-.hamburger {
-    display: none;
-    font-size: 2rem;
-    color: var(--primary-yellow);
-    cursor: pointer;
-}
-
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
     height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* Sfumatura scura sopra la texture */
-    background: radial-gradient(circle, rgba(0,35,102,0.4) 0%, rgba(0,0,0,0.9) 100%);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    background: radial-gradient(circle, rgba(0,35,102,0.6) 0%, rgba(0,0,0,0.9) 100%);
     border-bottom: 4px solid var(--primary-yellow);
 }
-
-.hero h1 {
-    font-size: 3rem; 
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 0px #000; 
-}
-
+.hero h1 { font-size: 3rem; text-shadow: 4px 4px 0px #000; margin-bottom: 1rem;}
 .btn-primary {
-    display: inline-block;
-    background-color: var(--primary-yellow);
-    color: #000;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    border: none;
-    clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%); /* Taglio spigoloso */
+    display: inline-block; background-color: var(--primary-yellow); color: #000;
+    padding: 15px 30px; font-size: 1.2rem; margin-top: 20px; border: none;
+    clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
 }
-
 .btn-primary:hover { transform: scale(1.05); background-color: #fff; }
 
-/* --- SEZIONI --- */
-section { padding: 60px 0; }
+/* --- SEZIONI GENERALI --- */
+section { padding: 60px 0; border-bottom: 1px solid #333; }
 .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 40px;
-    border-bottom: 3px solid var(--primary-blue);
-    display: inline-block;
-    padding-bottom: 5px;
+    font-size: 2.5rem; text-align: center; margin-bottom: 40px;
+    border-bottom: 3px solid var(--primary-blue); display: inline-block;
 }
-.section-title span { color: var(--primary-yellow); }
 
-/* GRIGLIE */
-.grid-3 {
+/* GRIGLIA SIMMETRICA (2 col su Tablet/PC, 1 su Mobile) */
+.grid-simmetrica {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Mobile: 1 colonna */
     gap: 30px;
+}
+@media (min-width: 768px) {
+    .grid-simmetrica {
+        grid-template-columns: repeat(2, 1fr); /* PC: 2 colonne esatte (2 sopra, 2 sotto) */
+    }
 }
 
 /* SERVIZI CARDS */
 .service-card {
-    background: #222;
-    border: 2px solid #333;
-    padding: 30px;
-    text-align: center;
+    background: #222; border: 2px solid #333; padding: 30px; text-align: center;
     transition: 0.3s;
 }
 .service-card:hover { border-color: var(--primary-yellow); background: #2a2a2a; }
 .icon-large { font-size: 3rem; color: var(--primary-yellow); margin-bottom: 15px; }
 
-/* --- TEAM (NUOVO STILE FOTO GRUPPO) --- */
-.team-photo-container {
-    text-align: center;
-    margin-bottom: 40px;
+/* ORARI E PREZZI BOX */
+.info-box {
+    background: #00153d; border: 2px solid var(--primary-yellow);
+    padding: 30px; text-align: center;
 }
+.info-list li { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;}
 
+/* GALLERY GRID */
+.grid-gallery {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;
+}
+.gallery-img {
+    width: 100%; height: 250px; object-fit: cover;
+    border: 2px solid #444; filter: grayscale(50%); transition: 0.3s;
+}
+.gallery-img:hover { filter: grayscale(0%); border-color: var(--primary-yellow); }
+
+/* TEAM */
+.team-photo-container { text-align: center; margin-bottom: 40px; }
 .group-photo {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border: 4px solid var(--primary-yellow);
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    filter: contrast(1.1) grayscale(20%);
-    transition: filter 0.3s;
+    width: 100%; max-width: 800px; height: auto;
+    border: 4px solid var(--primary-yellow); box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.team-info-card { background: #00153d; border: 2px solid #222; padding: 25px; text-align: center; }
+.role { color: var(--primary-yellow); font-weight: bold; font-family: 'Russo One'; display: block; }
 
-.group-photo:hover { filter: grayscale(0%); border-color: #fff; }
-
-.team-info-card {
-    background: #00153d;
-    border: 2px solid #222;
-    padding: 25px;
-    text-align: center;
-    position: relative;
-}
-
-.team-info-card::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--primary-yellow);
-    margin: 10px auto;
-}
-
-.role { 
-    color: var(--primary-yellow); 
-    font-weight: bold; 
-    font-family: 'Russo One', sans-serif; 
-    display: block; 
-    margin-bottom: 10px; 
-    font-size: 1.1rem;
-}
-
-/* RECENSIONI */
-.section-reviews { background-color: #111; }
-.review-card {
-    border: 2px solid #444;
-    padding: 20px;
-    font-style: italic;
-    position: relative;
-}
-.review-card::before { content: '"'; font-size: 4rem; color: var(--primary-blue); position: absolute; top: -10px; left: 10px; opacity: 0.5; }
-.stars { color: var(--primary-yellow); margin-bottom: 10px; }
-
-/* CONTATTI */
+/* CONTATTI GRANDE */
 .section-blue { background-color: var(--primary-blue); text-align: center; }
-.address { font-size: 1.5rem; margin-bottom: 30px; font-weight: bold; }
-.contact-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.contact-layout {
+    display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+}
+@media (min-width: 768px) {
+    .contact-layout { grid-template-columns: 1fr 1fr; text-align: left; }
+}
+.address { font-size: 1.5rem; margin-bottom: 20px; font-weight: bold; }
+.contact-buttons-vertical { display: flex; flex-direction: column; gap: 15px; }
 .btn-outline {
-    border: 2px solid var(--primary-yellow);
-    color: white;
-    padding: 10px 20px;
-    font-family: 'Russo One';
-    font-size: 1.1rem;
+    border: 2px solid var(--primary-yellow); color: white; padding: 15px;
+    font-family: 'Russo One'; text-align: center; display: block;
 }
 .btn-outline:hover { background: var(--primary-yellow); color: black; }
+.map-container {
+    border: 4px solid var(--primary-yellow); height: 100%; min-height: 300px;
+}
 
-/* FOOTER & COOKIE */
+/* FOOTER */
 footer { background: black; text-align: center; padding: 20px; font-size: 0.8rem; color: #555; }
 
-.cookie-banner {
-    position: fixed; bottom: 0; left: 0; width: 100%;
-    background: rgba(0,0,0,0.9); color: white;
-    padding: 15px; text-align: center; border-top: 2px solid var(--primary-yellow);
-    z-index: 2000; display: flex; justify-content: center; align-items: center; gap: 15px;
-}
-.btn-small { background: var(--primary-yellow); border: none; padding: 5px 15px; font-weight: bold; cursor: pointer; }
-
-/* --- RESPONSIVE MOBILE --- */
+/* --- MOBILE MENU FIX --- */
 @media (max-width: 768px) {
     .hamburger { display: block; } 
-    
     .main-nav {
-        position: absolute; top: 100%; left: 0; width: 100%;
-        background-color: #00153d; border-bottom: 3px solid var(--primary-yellow);
-        display: none; text-align: center; padding: 20px 0;
+        position: fixed; top: 0; right: -100%; width: 70%; height: 100vh;
+        background-color: #00153d; border-left: 3px solid var(--primary-yellow);
+        transition: 0.4s; display: flex; align-items: center; justify-content: center;
+        flex-direction: column; z-index: 1001;
     }
-    .main-nav.active { display: block; }
-    .main-nav ul { flex-direction: column; gap: 20px; }
-    .hero h1 { font-size: 2rem; }
+    .main-nav.active { right: 0; }
+    .main-nav ul { flex-direction: column; gap: 30px; text-align: center; }
 }
