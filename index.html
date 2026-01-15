@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="CSS/style.css">
@@ -28,9 +27,9 @@
             <nav class="main-nav" id="nav-menu">
                 <ul>
                     <li><a href="#storia">Storia</a></li>
-                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#orari-prezzi">Orari & Prezzi</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="#recensioni">Dicono di Noi</a></li>
                     <li><a href="#contatti" class="btn-cta">CONTATTI</a></li>
                 </ul>
             </nav>
@@ -41,7 +40,7 @@
         <div class="hero-content">
             <h1>SIAMO SU UN ALTRO <span class="text-yellow">PIANETA</span></h1>
             <p>GHISA, SUDORE E POCHE PAROLE. DAL 1988.</p>
-            <a href="#contatti" class="btn-primary">INIZIA AD ALLENARTI</a>
+            <a href="#orari-prezzi" class="btn-primary">INIZIA AD ALLENARTI</a>
         </div>
     </section>
 
@@ -50,7 +49,6 @@
             <h2 class="section-title">OLD SCHOOL <span class="text-yellow">GENUINE</span></h2>
             <div class="content-box">
                 <p>La Metal Gym è una palestra storica dove non solo ci si allena, ma si ottengono risultati. Nata nel 1988, portiamo avanti la tradizione del vero bodybuilding.</p>
-                <p>Niente distrazioni, solo macchinari ben fatti e dischi di ghisa per chi cerca la sostanza.</p>
             </div>
         </div>
     </section>
@@ -58,27 +56,62 @@
     <section id="servizi" class="section-services">
         <div class="container">
             <h2 class="section-title">COSA OFFRIAMO</h2>
-            <div class="grid-3">
+            <div class="grid-simmetrica">
                 <div class="service-card">
                     <i class="fa-solid fa-dumbbell icon-large"></i>
                     <h3>Sala Pesi</h3>
-                    <p>Attrezzatura "Old School", manubri pesanti e macchinari a leveraggio per il massimo isolamento.</p>
+                    <p>Attrezzatura "Old School" e manubri pesanti.</p>
                 </div>
                 <div class="service-card">
                     <i class="fa-solid fa-users icon-large"></i>
                     <h3>Ambiente Familiare</h3>
-                    <p>Qui non sei un numero. Ti alleni in scioltezza, senza code e in un clima sereno.</p>
+                    <p>Niente code, niente caos, solo allenamento.</p>
                 </div>
                 <div class="service-card">
                     <i class="fa-solid fa-person-running icon-large"></i>
                     <h3>Personal Trainer</h3>
-                    <p>Vanni e Daniele sono sempre presenti in sala. Esperienza decennale a tua disposizione.</p>
+                    <p>Vanni e Daniele sempre presenti in sala.</p>
                 </div>
                 <div class="service-card">
                     <i class="fa-solid fa-heart-pulse icon-large"></i>
                     <h3>Corsi & Posturale</h3>
-                    <p>Percorsi personalizzati per ritrovare il benessere fisico e correggere la postura.</p>
+                    <p>Percorsi su misura per il tuo benessere.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="orari-prezzi" class="section-dark">
+        <div class="container">
+            <div class="grid-simmetrica">
+                <div class="info-box">
+                    <h3 class="text-yellow">ORARI APERTURA</h3>
+                    <ul class="info-list">
+                        <li><strong>Lun - Ven:</strong> 09:30 - 21:30</li>
+                        <li><strong>Sabato:</strong> 09:30 - 17:30</li>
+                        <li><strong>Domenica:</strong> Chiuso</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3 class="text-yellow">ABBONAMENTI</h3>
+                    <ul class="info-list">
+                        <li>Passa a trovarci in segreteria per scoprire le nostre offerte e trovare la soluzione più adatta alle tue esigenze.</li>
+                        <li><em>*Pacchetti ingressi e abbonamenti personalizzati disponibili.</em></li>
+                    </ul>
+                    <a href="#contatti" class="btn-small" style="margin-top:15px; display:inline-block;">Richiedi Info</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-services">
+        <div class="container">
+            <h2 class="section-title">LA PALESTRA</h2>
+            <div class="grid-gallery">
+                <img src="img/palestra1.jpg" alt="Interno Palestra" class="gallery-img" onerror="this.src='https://via.placeholder.com/400x300/333/FFD700?text=SALA+PESI'">
+                <img src="img/palestra2.jpg" alt="Macchinari" class="gallery-img" onerror="this.src='https://via.placeholder.com/400x300/333/FFD700?text=MACCHINARI'">
+                <img src="img/palestra3.jpg" alt="Dettagli" class="gallery-img" onerror="this.src='https://via.placeholder.com/400x300/333/FFD700?text=MANUBRI'">
+                <img src="img/palestra4.jpg" alt="Atmosphere" class="gallery-img" onerror="this.src='https://via.placeholder.com/400x300/333/FFD700?text=ATMOSFERA'">
             </div>
         </div>
     </section>
@@ -86,53 +119,18 @@
     <section id="team" class="section-dark">
         <div class="container">
             <h2 class="section-title">LO STAFF</h2>
-            
             <div class="team-photo-container">
-                <img src="img/vanni_daniele_cinzia.jpg" alt="Vanni, Daniele e Cinzia - Metal Gym Staff" class="group-photo">
+                <img src="img/vanni_daniele_cinzia.jpg" alt="Staff Metal Gym" class="group-photo">
             </div>
-
             <div class="grid-3 team-descriptions">
-                
                 <div class="team-info-card">
-                    <h3>VANNI</h3>
-                    <span class="role">Fondatore & PT</span>
-                    <p>Il numero 1. Esperienza e passione dal 1988.</p>
+                    <h3>VANNI</h3><span class="role">Fondatore & PT</span>
                 </div>
-
                 <div class="team-info-card">
-                    <h3>DANIELE</h3>
-                    <span class="role">Personal Trainer</span>
-                    <p>Sempre disponibile in sala per massimizzare i tuoi gains.</p>
+                    <h3>DANIELE</h3><span class="role">Personal Trainer</span>
                 </div>
-                
                 <div class="team-info-card">
-                    <h3>CINZIA</h3>
-                    <span class="role">Responsabile Corsi</span>
-                    <p>L'anima organizzativa e tecnica dei corsi.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="recensioni" class="section-reviews">
-        <div class="container">
-            <h2 class="section-title">DICONO DI NOI</h2>
-            <div class="grid-3">
-                <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐⭐</div>
-                    <p>"Classica palestra OLD SCHOOL. Ghisa, sudore, poche parole e TANTI GAINS. I trainer grondano di esperienza!"</p>
-                    <h4>- Bia R.</h4>
-                </div>
-                <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Palestra storica dove si ottengono i risultati! Allegria e competenza sono i punti chiave."</p>
-                    <h4>- Manuel Volontè</h4>
-                </div>
-                <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Unica palestra efficace frequentata nella mia vita. Se volete risultati evidenti frequentatela… Vanni n 1"</p>
-                    <h4>- Luca Pozzi</h4>
+                    <h3>CINZIA</h3><span class="role">Responsabile Corsi</span>
                 </div>
             </div>
         </div>
@@ -141,12 +139,23 @@
     <section id="contatti" class="section-blue">
         <div class="container">
             <h2 class="section-title">VIENI A TROVARCI</h2>
-            <p class="address">Via Venezia 3, 20823 Lentate sul Seveso (MB)</p>
             
-            <div class="contact-buttons">
-                <a href="tel:+393398503481" class="btn-outline">VANNI: 339 850 3481</a>
-                <a href="tel:+393348006250" class="btn-outline">DANIELE: 334 800 6250</a>
-                <a href="mailto:metalgym@libero.it" class="btn-outline">EMAIL</a>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <p class="address">Via Venezia 3, 20823<br>Lentate sul Seveso (MB)</p>
+                    <div class="contact-buttons-vertical">
+                        <a href="tel:+393398503481" class="btn-outline">VANNI: 339 850 3481</a>
+                        <a href="tel:+393348006250" class="btn-outline">DANIELE: 334 800 6250</a>
+                        <a href="mailto:metalgym@libero.it" class="btn-outline">INVIA EMAIL</a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.665793466848!2d9.117260576623668!3d45.64235897107765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786966574213123%3A0x6a26703901452627!2sVia%20Venezia%2C%203%2C%2020823%20Lentate%20sul%20Seveso%20MB!5e0!3m2!1sit!2sit!4v1709228000000!5m2!1sit!2sit" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -154,12 +163,7 @@
     <footer>
         <p>&copy; 2024 Metal Gym - Associazione Sportiva.</p>
     </footer>
-    
-    <div id="cookie-banner" class="cookie-banner">
-        <p>Utilizziamo i cookie per migliorare la tua esperienza. <button id="accept-cookies" class="btn-small">Accetto</button></p>
-    </div>
 
     <script src="js/script.js"></script>
 </body>
-
 </html>
