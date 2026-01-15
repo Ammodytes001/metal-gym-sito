@@ -72,7 +72,7 @@ section {
 .btn-cta { color: var(--primary-yellow); border: 3px solid var(--primary-yellow); padding: 10px 22px; font-size: 1.2rem; font-weight: bold;}
 .btn-cta:hover { background: var(--primary-yellow); color: #000; }
 
-/* --- HERO SECTION (FIX SFUMATURA PC) --- */
+/* --- HERO SECTION (FIX DEFINITIVO BORDI) --- */
 .hero {
     height: 85vh;
     display: flex; 
@@ -80,29 +80,28 @@ section {
     justify-content: center; 
     text-align: center;
     border-bottom: 4px solid var(--primary-yellow);
-    background-color: #111; /* Fondamentale: nero solido dietro */
+    background-color: #111; /* Colore di fondo che corrisponde alla fine della sfumatura */
     
     background-image: 
-        /* 1. TENDA NERA SINISTRA (Molto coprente) */
-        linear-gradient(90deg, #111 15%, rgba(17,17,17,0.8) 30%, rgba(17,17,17,0) 50%),
+        /* 1. SFUMATURA RADIALE (Vignettatura):
+           Crea un cerchio trasparente al centro che diventa SOLIDO #111 ai bordi.
+           Questo nasconde completamente gli spigoli della foto. */
+        radial-gradient(circle at center, rgba(17,17,17,0) 20%, rgba(17,17,17,0.8) 50%, #111 80%),
         
-        /* 2. TENDA NERA DESTRA (Molto coprente) */
-        linear-gradient(-90deg, #111 15%, rgba(17,17,17,0.8) 30%, rgba(17,17,17,0) 50%),
-        
-        /* 3. VELO SCURO CENTRALE (Per dare l'effetto trasparenza/opaco all'immagine) */
-        linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
-        
-        /* 4. SFUMATURA BASSO (Per fondersi con la pagina) */
-        linear-gradient(to top, #111 0%, rgba(17,17,17,0) 20%),
+        /* 2. Sfumatura Basso (Nero -> Trasparente) per fondere il "pavimento" */
+        linear-gradient(to top, #111 0%, rgba(17,17,17,0) 30%),
 
-        /* 5. L'IMMAGINE */
+        /* 3. Velo Scuro Leggero (Per leggere il testo sopra la foto) */
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+
+        /* 4. L'IMMAGINE */
         url('../img/hero-bg.jpg');
 
     /* DIMENSIONI:
-       I gradienti coprono tutto (100% 100%).
-       L'immagine è "auto 100%" -> Altezza massima, larghezza proporzionata.
+       La sfumatura radiale copre tutto (100% 100%).
+       L'immagine è "auto 100%" -> Altezza piena, larghezza automatica.
     */
-    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, auto 100%;
+    background-size: 100% 100%, 100% 100%, 100% 100%, auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -230,7 +229,6 @@ footer { background: black; text-align: center; padding: 30px; font-size: 1rem; 
     .hero {
         background-size: cover; 
         background-position: center;
-        /* Rimuoviamo le tende laterali nere su mobile, lasciamo solo l'oscuramento globale */
         background-image: 
             linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
             url('../img/hero-bg.jpg');
